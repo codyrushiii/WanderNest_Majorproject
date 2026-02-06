@@ -40,6 +40,10 @@ This project is developed as part of a **Major Project** using the **MERN stack*
 
 
 **SCREENSHOT**
-![UI](image.png)
-![lOGIN](image-1.png)
-![Des](image-2.png)
+
+
+![Login Page](screenshots/desc.png)
+
+![Signup Page](screenshots/signin.png)
+
+![Home Page](screenshots/ui.png)
