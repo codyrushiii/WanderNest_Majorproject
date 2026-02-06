@@ -43,10 +43,10 @@ const Review=require("./models/review.js");
 
 
 //Create a connection between MongoDB & Nodejs
-const MONGO_URL='mongodb://127.0.0.1:27017/wandernest';
+const dbUrl = process.env.DB_URL;
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbUrl);
 }  
 
 main().then(()=>{
@@ -57,13 +57,17 @@ main().then(()=>{
 
 
 //Start the Server
-app.listen(8080,()=>{
-    console.log('server is listening to port 8080');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
+;
 
 //Define the Session Options
 const sessionOptions={
-    secret:"mysupersecretcode",
+    secret: process.env.SESSION_SECRET,
+
     resave:false,
     saveUnintialized:true,
     cookie:{
